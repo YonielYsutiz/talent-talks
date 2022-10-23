@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('modality');
             $table->string('salary');
             $table->string('email_company');
+            $table->string('city')->nullable();
             $table->timestamps();
         });
     }

@@ -1,132 +1,903 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Haz parte del Primer Festival que conecta al talento TI con la industria que lo requiere.">
+<meta name="author" content="">
+<meta name="keywords" content="talentfest talent fest mintic ">
+<title>Talent Fest</title>
 
-        <title>Laravel</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+ 
+<!-- attach CSS styles -->
 
-        <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/owl.transitions.css" rel="stylesheet" />
+<link href="css/owl.carousel.css" rel="stylesheet" />
+<link href="css/owl.theme.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+<!-- <link href="css/style2.css" rel="stylesheet" /> -->
+<link href="css/responsive.css" rel="stylesheet" />
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+</head>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+<body>
+<div class="se-pre-con"></div>
+<!--  BODY PAGE CONTENT --> 
+<!-- navigation panel --> 
+<!-- first section - Home -->
+<section id="home" class="home drawer drawer--left">
+  <div class="banner-title ">
+    <!--<h1><strong>Talent Fest</strong></h1>-->
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
+    <center>
+        <img src="../images/logo_talent_fest.png" width="350" alt="logo">    
+    </center>
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
+    <div class="event-schedule"> 
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
+    <span class="event-date"><i class="fa fa-flag" aria-hidden="true"></i> 17 Noviembre</span> <span class="event-place"><i class="fa fa-map-marker" aria-hidden="true"></i> Medellín</span> </div>
+    <p class="event-description" style="padding: 0 3.5em;">Se parte del primer festival que conecta talentos tecnológicos con empresas innovadoras.</p>
+    <!-- <div class="register-now-section">  <a href="#" class="register-now-btn">Enterate de todo <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div> -->
+    <div class="top-social"> <a href="" class="fa fa-facebook" aria-hidden="true"></a> <a href="" class="fa fa-twitter" aria-hidden="true"></a> <a href="" class="fa fa-linkedin" aria-hidden="true"> <a href="" class="fa fa-instagram" aria-hidden="true"></a> 
+    </div>
+  </div>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
+  <nav class="navbar navbar-default main-menu hidden-xs menu"  >
+    <div class="container-fluid">
+       <div class="header-left">
+            <p class="no-margin"><strong>Talent Fest</strong></p>
+          </div>
+          <div class="header-right">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main" data-target-2=".side-collapse-container"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav">
+          <li><a href="https://www.talent-fest.com/">Inicio</a><span>|</span></li>
+          <li><a href="#talent-fest-talks">Talent Talks</a><span>|</span></li>
+          <li><a href="#talent-fest-tour">Talent Tour</a><span>|</span></li>
+          <li><a href="/empresas">Empresas</a><span>|</span></li>
+          <li><a href="/vacants/create">Vacantes</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </nav>
+  <div class="mobile-menu hidden-sm hidden-md hidden-lg">
+    <div class="drawer-container">
+      <div class="drawer-navbar-header">
+        <button type="button" class="drawer-toggle drawer-hamburger"> <span class="sr-only">toggle navigation</span> <span class="drawer-hamburger-icon"></span> </button>
+      </div>
+      <nav class="drawer-nav" >
+      <div class="header-left">
+            <p class="no-margin"><strong>Talent Fest</strong></p>
+          </div>
+         <ul class="drawer-menu">
+           <li><a href="https://www.talent-fest.com/" class="drawer-menu-item">Inicio</a></li>
+          <li><a href="#talent-fest-talks" class="drawer-menu-item">Talent Talks</a></li>
+          <li><a href="#talent-fest-tour" class="drawer-menu-item">Talent Tour</a></li>
+          <li><a href="https://www.talent-fest.com/empresas" class="drawer-menu-item">Empresas</a></li>
+          <li><a href="https://www.talent-fest.com/vacantes" class="drawer-menu-item">Vacantes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+<!-- /first section --> 
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
-            </div>
+<!-- second section - About -->
+<section id="conference" class="conference">
+  <div class="container">
+    <div class="row">
+      <!--<h2><strong> Indicadores</strong></h2>-->
+      <div class="count-down col-sm-12 col-sm-12 col-xs-12">
+        <div class="row">
+          <div class="col-sm-12 col-sm-12 col-xs-12">
+            <div class="count-day"><span class="count-number" data-count="10" id="day">0</span><span class="count-label">ciudades</span></div>
+            <div class="count-day"><span class="count-number" data-count="10" id="hours">0</span><span class="count-label">eventos</span></div>
+            <div class="count-day"><span class="count-number" data-count="300" id="minutes">0</span><span class="count-label">empresas</span></div>
+            <div class="count-day"><span class="count-number" data-count="14000" id="seconds">0</span><span class="count-label">asistentes</span></div>
+          </div>
         </div>
-    </body>
+        <p class="count-down-description">Únete a nuestros eventos híbridos en todo el país. </p>
+        <a href="#schedule" class="register-now-btn">Talent Tour <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div>
+    </div>
+  </div>
+</section>
+<!-- /second section --> 
+
+<!-- third section - Services -->
+<section id="about" class="about-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-xs-12" style="text-align:center;">
+        <p class="block-title"><strong>TALENT </strong> Fest</p>
+        <!--<h3>¿Qué es Talent Fest?</h3>-->
+        <p>Talent Fest Colombia 2022 es el festival de empleabilidad y conexión de talentos con la industria TI de la región. Una iniciativa liderada por el Ministerio de Tecnologías de Información y Comunicaciones (MinTIC), Tecnalia y CYMETRIA, líder en proyectos de talento y empleabilidad digital.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /third section --> 
+
+
+
+<!-- Why Choose Us -->
+<section id="our-conference-sec">
+  <div class="conference-heading-bg white-heading">
+      <div class="container">
+          <div class="row text-center">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                  <!-- <span style="color: black; font-family: Montserrat-SemiBold;">Beneficios</span>-->
+                  <h2 font-family: Montserrat-SemiBold;">Talent Fest 2022 te trae muchos beneficios:
+</h2>
+                  <hr>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="conference-list-bg">
+      <div class="container">
+          <div class="row">
+
+              <div class="confrence-bg">
+                  <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6 confrence-col">
+                          <div class="confrence-col-inn">
+                              <div class="confrence-title">
+                                  <i class="fa fa-check icon-box" aria-hidden="true"></i>
+                                  <h3 style="color: black; font-family: Montserrat-SemiBold;">Acceso a contenidos de alto valor
+</h3>
+                              </div>
+                              <p style="color: #565656; font-family: Montserrat-Light;     font-size: 16px;
+                              line-height: 28px;">Podras acceder a conferencias, charlas y contenidos por demanda sobre habilidades blandas y habilidaes para empleabilidad.</p>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 confrence-col">
+                          <div class="confrence-col-inn">
+                              <div class="confrence-title">
+                                  <i class="fa fa-check icon-box" aria-hidden="true"></i>
+                                  <h3 style="color: black; font-family: Montserrat-SemiBold; ">Kit de búsqueda laboral </h3>
+                              </div>
+                              <p style="color: #565656; font-family: Montserrat-Light;     font-size: 16px;
+                              line-height: 28px;">Tendrás acceso al kit de busqueda laboral el cual te dará pautas y recursos invaluables para encontrar el empleo de tus sueños.</p>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 confrence-col">
+                          <div class="confrence-col-inn">
+                              <div class="confrence-title">
+                                  <i class="fa fa-check icon-box" aria-hidden="true"></i>
+                                  <h3 style="color: black; font-family: Montserrat-SemiBold;">Acceso a vacantes laborales</h3>
+                              </div>
+                              <p style="color: #565656; font-family: Montserrat-Light;     font-size: 16px;
+                              line-height: 28px;">Tenemos las mejores ofertas laborales de la industria nacional e internacional.</p>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 confrence-col">
+                          <div class="confrence-col-inn">
+                              <div class="confrence-title">
+                                  <i class="fa fa-check icon-box" aria-hidden="true"></i>
+                                  <h3 style="color: black; font-family: Montserrat-SemiBold;">Networking </h3>
+                              </div>
+                              <p style="color: #565656; font-family: Montserrat-Light;     font-size: 16px;
+                              line-height: 28px;">Podras realizar networking no solo entre empresas sino con otros talento como tu.</p>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- /End Why Choose Us -->
+
+
+
+
+<section id="about" class="about-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-xs-12" style="text-align:center;">
+        <p class="block-title"><strong>Kit Talent Fest</strong></p>
+        <h3>¿Qué es el Kit De Empleabilidad?</h3>
+        <p style="font-size: 20px; max-width:500px; margin: 0 auto;">El kit contiene una guía práctica para que los participantes encuentren su próximo empleo. Contiene increibles beneficios y claves para alcanzar el éxito en tu proceso de vinculación laboral.
+        </p>
+        <div class="register-now-section">  <a href="https://www.talent-fest.com/kit" class="register-now-btn">Descargar Kit</a> </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- fourth section -->
+<section id="speakers" class="speakers" id="talent-fest-talks">
+  <div class="container">
+    <div class="row">
+      <h2 class="block-title"><strong>Talent Talks</strong></h2>
+      <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="speaker-block"> <img src="images/speaker.jpg" alt="Event Premium" class="img-responsive">
+          <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
+            <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
+            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="speaker-block"> <img src="images/speaker-1.jpg" alt="Event Premium" class="img-responsive">
+          <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
+            <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
+            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="speaker-block"> <img src="images/speaker-2.jpg" alt="Event Premium" class="img-responsive">
+            <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
+            <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
+            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="speaker-block"> <img src="images/speaker-3.jpg" alt="Event Premium" class="img-responsive">
+            <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
+            <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
+            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="speaker-block"> <img src="images/speaker-4.jpg" alt="Event Premium" class="img-responsive">
+          <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
+            <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
+            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="speaker-block"> <img src="images/speaker-5.jpg" alt="Event Premium" class="img-responsive">
+          <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
+            <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
+            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="speaker-block"> <img src="images/speaker-6.jpg" alt="Event Premium" class="img-responsive">
+          <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
+            <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
+            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="speaker-block"> <img src="images/speaker-7.jpg" alt="Event Premium" class="img-responsive">
+          <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
+            <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
+            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- <p class="text-center"><a href="speakers.html" class="register-now-btn styles-button">Speakers Styles <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </p> -->
+  </div>
+</section>
+<section id="schedule" class="schedule" id="talent-fest-tour">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="block-title"><strong>Talent Tour</strong></p>
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#menu0">Bogotá</a></li>
+          <li><a data-toggle="tab" href="#menu1">Soacha</a></li>
+          <li><a data-toggle="tab" href="#menu2">Medellín</a></li>
+          <li><a data-toggle="tab" href="#menu3">Cali</a></li>
+          <li><a data-toggle="tab" href="#menu4">B/quilla</a></li>
+          <li><a data-toggle="tab" href="#menu5">B/manga</a></li>
+          <li><a data-toggle="tab" href="#menu6">Cartagena</a></li>
+          <li><a data-toggle="tab" href="#menu7">Manizales</a></li>
+            <li><a data-toggle="tab" href="#menu8">Pereira</a></li>
+            <li><a data-toggle="tab" href="#menu9">Ibagué</a></li>
+            <li><a data-toggle="tab" href="#menu10">Tunja</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="menu0" class="tab-pane fade active in">
+            <div class="speakers-list">
+              <div class="col-sm-3  col-xs-12  left-section">
+                <div class="col-sm-12 col-xs-12">
+                  <div class="img-section"> <img src="images/speaker-round-image.png" alt="Event Premium" class="img-responsive"> </div>
+                  <div class="speaker-social">
+                    <span class="speaker-loaction" ><i class="fa fa-link" style="color: white;" aria-hidden="true"></i> Registro al evento</span>
+                  </div>
+                  <!-- <div class="speaker-social"> <a href="#" class="fa fa-facebook" aria-hidden="true"></a> <a href="#" class="fa fa-twitter" aria-hidden="true"></a> <a href="#" class="fa fa-linkedin" aria-hidden="true"></a> </a> </div> -->
+                </div>
+              </div>
+              <div class="col-sm-9  col-xs-12 ">
+                <div class="col-sm-12 col-xs-12">
+                  <h3 class="speaker-topic">Bogotá.</h3>
+                  <p class="topic-description">En Bogotá se sentirán truenos cargados de innovación. La ciudad capital será sede del Talent Fest Tour, uno de los eventos más esperados por talentos TI y empresarios. </p>
+                  <div class="speaker-schedule">
+                    <span class="speaker"><i class="fa fa-calendar" aria-hidden="true"></i> 17 noviembre </span>
+                    <span class="speaker-timing"><i class="fa fa-clock-o" aria-hidden="true"></i> 8:00am - 6:00pm</span> 
+                    <span class="speaker-loaction"><i class="fa fa-map-marker" aria-hidden="true"></i> El Cubo de Colsubsidio </span> 
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="menu1" class="tab-pane fade">
+            <div class="speakers-list">
+              <div class="col-sm-3 col-xs-12 left-section">
+                <div class="col-sm-12 col-xs-12">
+                  <div class="img-section"> <img src="images/speaker-round-image-1.png" alt="Event Premium" class="img-responsive"> </div>
+                  <div class="speaker-social">
+                    <span class="speaker-loaction" ><i class="fa fa-link" style="color: white;" aria-hidden="true"></i> Registro al evento</span>
+                  </div>
+                  <!-- <div class="speaker-social"> <a href="" class="fa fa-facebook" aria-hidden="true"></a> <a href="" class="fa fa-twitter" aria-hidden="true"></a> <a href="" class="fa fa-linkedin" aria-hidden="true"></a> </a> </div> -->
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <div class="col-sm-12 col-xs-12">
+                  <h3 class="speaker-topic">Soacha</h3>
+                  <p class="topic-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione.</p>
+                  <div class="speaker-schedule">
+                    <span class="speaker"><i class="fa fa-calendar" aria-hidden="true"></i> 17 noviembre </span>
+                    <span class="speaker-timing"><i class="fa fa-clock-o" aria-hidden="true"></i> 8:00am - 6:00pm</span> 
+                    <span class="speaker-loaction"><i class="fa fa-map-marker" aria-hidden="true"></i> Coliseo Soacha </span> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="menu2" class="tab-pane fade">
+            <div class="speakers-list">
+              <div class="col-sm-3 col-xs-12 left-section">
+                <div class="col-sm-12 col-xs-12">
+                  <div class="img-section"> <img src="images/speaker-round-image-2.png" alt="Event Premium" class="img-responsive"> </div>
+                  <div class="speaker-social">
+                    <span class="speaker-loaction" ><i class="fa fa-link" style="color: white;" aria-hidden="true"></i> Registro al evento</span>
+                  </div>
+                  <!-- <div class="speaker-social"> <a href="" class="fa fa-facebook" aria-hidden="true"></a> <a href="" class="fa fa-twitter" aria-hidden="true"></a> <a href="" class="fa fa-linkedin" aria-hidden="true"></a></a> </div> -->
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <div class="col-sm-12 col-xs-12">
+                  <h3 class="speaker-topic">Medellín</h3>
+                  <p class="topic-description">La ciudad más innovadora de Colombia es una de las ciudades elegidas para conectar talentos de la industria TI con las empresas de la región. </p>
+                  <div class="speaker-schedule">
+                    <span class="speaker"><i class="fa fa-calendar" aria-hidden="true"></i> 17 noviembre </span>
+                    <span class="speaker-timing"><i class="fa fa-clock-o" aria-hidden="true"></i> 8:00am - 6:00pm</span> 
+                    <span class="speaker-loaction"><i class="fa fa-map-marker" aria-hidden="true"></i> C4TA, Centro de Cuarta Revolución Industrial </span> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="menu3" class="tab-pane fade">
+            <div class="speakers-list">
+              <div class="col-sm-3 col-xs-12 left-section">
+                <div class="col-sm-12 col-xs-12">
+                  <div class="img-section"> <img src="images/speaker-round-image.png" class="img-responsive" alt="Event Premium"> </div>
+                  <div class="speaker-social">
+                    <span class="speaker-loaction" ><i class="fa fa-link" style="color: white;" aria-hidden="true"></i> Registro al evento</span>
+                  </div>
+                  <!-- <div class="speaker-social"> <a href="" class="fa fa-facebook" aria-hidden="true"></a> <a href="" class="fa fa-twitter" aria-hidden="true"></a> <a href="" class="fa fa-linkedin" aria-hidden="true"></a> </a> </div> -->
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <div class="col-sm-12 col-xs-12">
+                  <h3 class="speaker-topic">Cali</h3>
+                  <p class="topic-description">En Cali no solo se baila salsa, también se disfruta con tecnología e innovación. Por eso será una de las sedes del Talent Fest Tour. Agéndate.</p>
+                  <div class="speaker-schedule">
+                    <span class="speaker"><i class="fa fa-calendar" aria-hidden="true"></i> 17 noviembre </span>
+                    <span class="speaker-timing"><i class="fa fa-clock-o" aria-hidden="true"></i> 8:00am - 6:00pm</span> 
+                    <span class="speaker-loaction"><i class="fa fa-map-marker" aria-hidden="true"></i> UNAB, Auditorio Mayor </span> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="menu4" class="tab-pane fade">
+            <div class="speakers-list">
+              <div class="col-sm-3 col-xs-12 left-section">
+                <div class="col-sm-12 col-xs-12">
+                  <div class="img-section"> <img src="images/speaker-round-image.png" class="img-responsive" alt="Event Premium"> </div>
+                  <div class="speaker-social">
+                    <span class="speaker-loaction" ><i class="fa fa-link" style="color: white;" aria-hidden="true"></i> Registro al evento</span>
+                  </div>
+                  <!-- <div class="speaker-social"> <a href="" class="fa fa-facebook" aria-hidden="true"></a> <a href="" class="fa fa-twitter" aria-hidden="true"></a> <a href="" class="fa fa-linkedin" aria-hidden="true"></a> </a> </div> -->
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <div class="col-sm-12 col-xs-12">
+                  <h3 class="speaker-topic">Barranquilla</h3>
+                  <p class="topic-description">Curramba la bella ahora no solo celebra su carnaval, ahora también el festival de talento tecnológico más importante del país. Agéndate en tu ciudad.</p>
+                  <div class="speaker-schedule">
+                    <span class="speaker"><i class="fa fa-calendar" aria-hidden="true"></i> 17 noviembre </span>
+                    <span class="speaker-timing"><i class="fa fa-clock-o" aria-hidden="true"></i> 8:00am - 6:00pm</span> 
+                    <span class="speaker-loaction"><i class="fa fa-map-marker" aria-hidden="true"></i> UNAB, Auditorio Mayor </span> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="menu5" class="tab-pane fade">
+            <div class="speakers-list">
+              <div class="col-sm-3 col-xs-12 left-section">
+                <div class="col-sm-12 col-xs-12">
+                  <div class="img-section"> <img src="images/speaker-round-image.png" class="img-responsive" alt="Event Premium"> </div>
+                  <div class="speaker-social">
+                    <span class="speaker-loaction" ><i class="fa fa-link" style="color: white;" aria-hidden="true"></i> Registro al evento</span>
+                  </div>
+                  <!-- <div class="speaker-social"> <a href="" class="fa fa-facebook" aria-hidden="true"></a> <a href="" class="fa fa-twitter" aria-hidden="true"></a> <a href="" class="fa fa-linkedin" aria-hidden="true"></a> </a> </div> -->
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <div class="col-sm-12 col-xs-12">
+                  <h3 class="speaker-topic">Bucaramanga</h3>
+                  <p class="topic-description">La ciudad bonita es otra de las sedes del Talent Fest Tour. La hermosa ciudad de los parques se vestirá de tecnología para una cita entre talentos y empresarios de la industria.</p>
+                  <div class="speaker-schedule">
+                    <span class="speaker"><i class="fa fa-calendar" aria-hidden="true"></i> 17 noviembre </span>
+                    <span class="speaker-timing"><i class="fa fa-clock-o" aria-hidden="true"></i> 8:00am - 6:00pm</span> 
+                    <span class="speaker-loaction"><i class="fa fa-map-marker" aria-hidden="true"></i> UNAB </span> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="menu6" class="tab-pane fade">
+            <div class="speakers-list">
+              <div class="col-sm-3 col-xs-12 left-section">
+                <div class="col-sm-12 col-xs-12">
+                  <div class="img-section"> <img src="images/speaker-round-image.png" class="img-responsive" alt="Event Premium"> </div>
+                  <div class="speaker-social">
+                    <span class="speaker-loaction" ><i class="fa fa-link" style="color: white;" aria-hidden="true"></i> Registro al evento</span>
+                  </div>
+                  <!-- <div class="speaker-social"> <a href="" class="fa fa-facebook" aria-hidden="true"></a> <a href="" class="fa fa-twitter" aria-hidden="true"></a> <a href="" class="fa fa-linkedin" aria-hidden="true"></a> </a> </div> -->
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <div class="col-sm-12 col-xs-12">
+                  <h3 class="speaker-topic">Cartagena</h3>
+                  <p class="topic-description">La Heróica, ciudad de grandes eventos, será una de las sedes del gran Talent Fest 2022. Todo el talento TI de la región se conectará con las empresas que los requieran.</p>
+                  <div class="speaker-schedule">
+                    <span class="speaker"><i class="fa fa-calendar" aria-hidden="true"></i> 17 noviembre </span>
+                    <span class="speaker-timing"><i class="fa fa-clock-o" aria-hidden="true"></i> 8:00am - 6:00pm</span> 
+                    <span class="speaker-loaction"><i class="fa fa-map-marker" aria-hidden="true"></i> Casa Marquez </span> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="menu7" class="tab-pane fade">
+            <div class="speakers-list">
+              <div class="col-sm-3 col-xs-12 left-section">
+                <div class="col-sm-12 col-xs-12">
+                  <div class="img-section"> <img src="images/speaker-round-image.png" class="img-responsive" alt="Event Premium"> </div>
+                  <div class="speaker-social">
+                    <span class="speaker-loaction" ><i class="fa fa-link" style="color: white;" aria-hidden="true"></i> Registro al evento</span>
+                  </div>
+                  <!-- <div class="speaker-social"> <a href="" class="fa fa-facebook" aria-hidden="true"></a> <a href="" class="fa fa-twitter" aria-hidden="true"></a> <a href="" class="fa fa-linkedin" aria-hidden="true"></a> </a> </div> -->
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <div class="col-sm-12 col-xs-12">
+                  <h3 class="speaker-topic">Manizales</h3>
+                  <p class="topic-description">En Manizales se abrirán las puertas para los desarrolladores de software, programadores y talentos TI que quieren conectar con las empresas de su región para hacer proyectos innovadores. Regístrate.</p>
+                  <div class="speaker-schedule">
+                    <span class="speaker"><i class="fa fa-calendar" aria-hidden="true"></i> 17 noviembre </span>
+                    <span class="speaker-timing"><i class="fa fa-clock-o" aria-hidden="true"></i> 8:00am - 6:00pm</span> 
+                    <span class="speaker-loaction"><i class="fa fa-map-marker" aria-hidden="true"></i> UNAB, Auditorio Mayor </span> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="menu8" class="tab-pane fade">
+            <div class="speakers-list">
+              <div class="col-sm-3 col-xs-12 left-section">
+                <div class="col-sm-12 col-xs-12">
+                  <div class="img-section"> <img src="images/speaker-round-image.png" class="img-responsive" alt="Event Premium"> </div>
+                  <div class="speaker-social">
+                    <span class="speaker-loaction" ><i class="fa fa-link" style="color: white;" aria-hidden="true"></i> Registro al evento</span>
+                  </div>
+                  <!-- <div class="speaker-social"> <a href="" class="fa fa-facebook" aria-hidden="true"></a> <a href="" class="fa fa-twitter" aria-hidden="true"></a> <a href="" class="fa fa-linkedin" aria-hidden="true"></a> </a> </div> -->
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <div class="col-sm-12 col-xs-12">
+                  <h3 class="speaker-topic">Pereira</h3>
+                  <p class="topic-description">La capital del Eje Cafetero no solo huele a café, también a tecnología. Por eso, los miles de talentos TI de la región mostrarán su talento durante el Talent Fest Tour. Prográmate.</p>
+                  <div class="speaker-schedule">
+                    <span class="speaker"><i class="fa fa-calendar" aria-hidden="true"></i> 17 noviembre </span>
+                    <span class="speaker-timing"><i class="fa fa-clock-o" aria-hidden="true"></i> 8:00am - 6:00pm</span> 
+                    <span class="speaker-loaction"><i class="fa fa-map-marker" aria-hidden="true"></i> UNAB, Auditorio Mayor </span> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="menu9" class="tab-pane fade">
+            <div class="speakers-list">
+              <div class="col-sm-3 col-xs-12 left-section">
+                <div class="col-sm-12 col-xs-12">
+                  <div class="img-section"> <img src="images/speaker-round-image.png" class="img-responsive" alt="Event Premium"> </div>
+                  <div class="speaker-social">
+                    <span class="speaker-loaction" ><i class="fa fa-link" style="color: white;" aria-hidden="true"></i> Registro al evento</span>
+                  </div>
+                  <!-- <div class="speaker-social"> <a href="" class="fa fa-facebook" aria-hidden="true"></a> <a href="" class="fa fa-twitter" aria-hidden="true"></a> <a href="" class="fa fa-linkedin" aria-hidden="true"></a> </div> -->
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <div class="col-sm-12 col-xs-12">
+                  <h3 class="speaker-topic">Ibagué</h3>
+                  <p class="topic-description">La ciudad musical de Colombia albergará al talento TI y a las empresas que quieren conectar con ellos para cubrir sus necesidades. Inscríbete. </p>
+                  <div class="speaker-schedule">
+                    <span class="speaker"><i class="fa fa-calendar" aria-hidden="true"></i> 17 noviembre </span>
+                    <span class="speaker-timing"><i class="fa fa-clock-o" aria-hidden="true"></i> 8:00am - 6:00pm</span> 
+                    <span class="speaker-loaction"><i class="fa fa-map-marker" aria-hidden="true"></i> UNAB, Auditorio Mayor </span> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="menu10" class="tab-pane fade">
+            <div class="speakers-list">
+              <div class="col-sm-3 col-xs-12 left-section">
+                <div class="col-sm-12 col-xs-12">
+                  <div class="img-section"> <img src="images/speaker-round-image.png" class="img-responsive" alt="Event Premium"> </div>
+                  <div class="speaker-social">
+                    <span class="speaker-loaction" ><i class="fa fa-link" style="color: white;" aria-hidden="true"></i> Registro al evento</span>
+                  </div>
+                  <!-- <div class="speaker-social"> <a href="" class="fa fa-facebook" aria-hidden="true"></a> <a href="" class="fa fa-twitter" aria-hidden="true"></a> <a href="" class="fa fa-linkedin" aria-hidden="true"></a> </div> -->
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <div class="col-sm-12 col-xs-12">
+                  <h3 class="speaker-topic">Tunja</h3>
+                  <p class="topic-description">De ser la cuna de la independencia, a ser una de las ciudades con mayor proyección de talentos tecnológicos. Por eso, esta ciudad será protagonista en el Talent Fest Tour. Reserva tu cupo. </p>
+                  <div class="speaker-schedule">
+                    <span class="speaker"><i class="fa fa-calendar" aria-hidden="true"></i> 17 noviembre </span>
+                    <span class="speaker-timing"><i class="fa fa-clock-o" aria-hidden="true"></i> 8:00am - 6:00pm</span> 
+                    <span class="speaker-loaction"><i class="fa fa-map-marker" aria-hidden="true"></i> UNAB, Auditorio Mayor </span> 
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <p class="text-center"><a href="schedules.html" class="register-now-btn styles-button">Schedules Styles <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </p> -->
+  </div>
+</section>
+<!-- /fourth section -->
+
+
+
+<!-- Fifth section - sponsors -->
+<section  class="sponsors white">
+  <div class="container">
+    <div class="row">
+        <h2 class="block-title"><strong>Aliados</strong></h2>
+      <!-- <small class="column">Aliados</small> -->
+      <div class="sponsors-logo">
+        <div class="col-sm-3 col-xs-3 logo-item"> <img src="images/sponsors/creative-graphic-unique.png" alt="Creative Graphic Unique" class="img-responsive"> </div>
+        <div class="col-sm-3 col-xs-3 logo-item"> <img src="images/sponsors/graphic-design-genuine.png" alt="Graphic Design Genuine" class="img-responsive"> </div>
+        <div class="col-sm-3 col-xs-3 logo-item"> <img src="images/sponsors/creative-special.png" alt="Creative Special" class="img-responsive"> </div>
+         <div class="col-sm-3 col-xs-3 logo-item"> <img src="images/sponsors/creative-graphic-unique.png" alt="Creative Graphic Unique" class="img-responsive"> </div>
+      </div>
+      <div class="sponsors-logo">
+        <div class="col-sm-3 col-xs-3 logo-item"> <img src="images/sponsors/creative-design-unique.png" alt="Creative Design Special" class="img-responsive"> </div>
+        <div class="col-sm-3 col-xs-3 logo-item"> <img src="images/sponsors/creative-graphic.png" alt="Creative Graphic" class="img-responsive"> </div>
+        <div class="col-sm-3 col-xs-3 logo-item"> <img src="images/sponsors/premium.png" alt="Event Premium" class="img-responsive"> </div>
+        <div class="col-sm-3 col-xs-3 logo-item"> <img src="images/sponsors/creative-design-unique.png" alt="Creative Design Special" class="img-responsive"> </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /Fifth section --> 
+
+<!-- Prices -->
+<!-- <section id="prices" class="prices">
+  <div class="container">
+    <div class="row">
+      <p class="block-title"><strong>The</strong> Prices</p>
+      <div class="col-sm-4 col-md-4 event-priceing">
+        <div class="inner-pricing">
+          <div class="plan-name">
+            <h6>Personal</h6>
+            <small>Basic Package</small> </div>
+          <div class="plan-price">
+            <p class="no-margin"><sup>$</sup>99</p>
+          </div>
+          <div class="plan-details">
+            <ul>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Entrance</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Coffe Break</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Lunch</li>
+              <li><i class="fa fa-times" aria-hidden="true"></i> Workshop</li>
+              <li><i class="fa fa-times" aria-hidden="true"></i> Certificate</li>
+            </ul>
+            <a href="#" class="register-now-btn">Buy Ticket <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 event-priceing">
+        <div class="inner-pricing">
+          <div class="best-offer">
+            <p class="no-margin">Best Offer</p>
+          </div>
+          <div class="plan-name">
+            <h6 class="best-offer-padding">Business</h6>
+            <small>Premium Package</small> </div>
+          <div class="plan-price">
+            <p class="no-margin"><sup>$</sup>149</p>
+          </div>
+          <div class="plan-details">
+            <ul>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Entrance</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Coffe Break</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Lunch</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Workshop</li>
+              <li><i class="fa fa-times" aria-hidden="true"></i> Certificate</li>
+            </ul>
+            <a href="#" class="register-now-btn">Buy Ticket <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 event-priceing">
+        <div class="inner-pricing">
+          <div class="plan-name">
+            <h6>Coporate</h6>
+            <small>Best Package</small> </div>
+          <div class="plan-price">
+            <p class="no-margin"><sup>$</sup>199</p>
+          </div>
+          <div class="plan-details">
+            <ul>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Entrance</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Coffe Break</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Lunch</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Workshop</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Certificate</li>
+            </ul>
+            <a href="#" class="register-now-btn">Buy Ticket <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div>
+        </div>
+      </div>
+    </div>
+    <div class="get-in-touch">
+      <p class="no-margin">Need additional pricing info? <a href="#">Get in touch</a> </p>
+    </div>
+  </div>
+  <p class="text-center"><a href="price.html" class="register-now-btn styles-button">Price Styles <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </p>
+</section> -->
+<!-- /Prices --> 
+
+
+
+
+<!-- section Talent Fest Tour -->
+<section id="about" class="about-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-xs-12" style="text-align:center;">
+        <p class="block-title"><strong>EMPRESAS</strong></p>
+        <h3>¿Buscando talento?</h3>
+        <p style="font-size: 20px; max-width:500px; margin: 0 auto;">En TALENT FEST encontraras miles de talentos tecnológicos en nuestros eventos híbridos. Registra tus ofertas laborales y nos encargaremos de conectar con el mejor talento de Latam.
+        </p>
+        <div class="register-now-section">  <a href="https://www.talent-fest.com/empresas" class="register-now-btn">Mas info</a> </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- section Talent Fest Tour --> 
+
+
+
+
+<!-- Testiominals -->
+<section id="testiominal" class="testiominals">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-xs-12">
+        <p class="block-title"><strong>Testimonios</strong></p>
+        <!-- <h3>What People Say About Our Last Event Camp Premium.</h3> -->
+        <div class="owl-testimonial">
+          <div class="inner-testimonial">
+            <div class="tm-tagline"> <i class="fa fa-quote-left" aria-hidden="true"></i> <span> En Talent Fest 2022 logré aprender todas las habilidades blandas necesarias para complementar mi formación en Mision TIC.</span> </div>
+            <div class="tm-userinfo">
+              <div class="tm-userimg"> <img src="images/testimonial-1.png" alt="testimonial" /> </div>
+              <div class="tm-userbio">
+                <h4 class="tm-title">Luis Alfredo Martinez</h4>
+                <p class="tm-designation">Programador Full Stack Java</p>
+                <span><i class="fa fa-calendar-o" aria-hidden="true"></i> 05/22</span> </div>
+            </div>
+          </div>
+          <div class="inner-testimonial">
+            <div class="tm-tagline"> <i class="fa fa-quote-left" aria-hidden="true"></i> <span> Encontrar talento se ha vuelto todo un reto para las empresas. En Qualitas apostamos a los talentos formados por el Ministerio TIC.</span> </div>
+            <div class="tm-userinfo">
+              <div class="tm-userimg"> <img src="images/testimonial-2.png" alt="testimonial" /> </div>
+              <div class="tm-userbio">
+                <h4 class="tm-title">Mercedes Quintero</h4>
+                <p class="tm-designation">CEO Qualitas Team.</p>
+                <span><i class="fa fa-calendar-o" aria-hidden="true"></i> 05/22</span> </div>
+            </div>
+          </div>
+          <!--
+          <div class="inner-testimonial">
+            <div class="tm-tagline"> <i class="fa fa-quote-left" aria-hidden="true"></i> <span> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</span> </div>
+            <div class="tm-userinfo">
+              <div class="tm-userimg"> <img src="images/testimonial-1.png" alt="testimonial" /> </div>
+              <div class="tm-userbio">
+                <h4 class="tm-title"> Kevin Ten</h4>
+                <p class="tm-designation">Founder of Realten inc.</p>
+                <span><i class="fa fa-calendar-o" aria-hidden="true"></i> 05/01</span> </div>
+            </div>
+          </div>
+          <div class="inner-testimonial">
+            <div class="tm-tagline"> <i class="fa fa-quote-left" aria-hidden="true"></i> <span> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</span> </div>
+            <div class="tm-userinfo">
+              <div class="tm-userimg"> <img src="images/testimonial-2.png" alt="testimonial" /> </div>
+              <div class="tm-userbio">
+                <h4 class="tm-title"> Sara Pearson</h4>
+                <p class="tm-designation">Founder of Realten inc.</p>
+                <span><i class="fa fa-calendar-o" aria-hidden="true"></i> 05/01</span> </div>
+            </div>
+          </div>
+          <div class="inner-testimonial">
+            <div class="tm-tagline"> <i class="fa fa-quote-left" aria-hidden="true"></i> <span> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</span> </div>
+            <div class="tm-userinfo">
+              <div class="tm-userimg"> <img src="images/testimonial-1.png" alt="testimonial" /> </div>
+              <div class="tm-userbio">
+                <h4 class="tm-title"> Kevin Ten</h4>
+                <p class="tm-designation">Founder of Realten inc.</p>
+                <span><i class="fa fa-calendar-o" aria-hidden="true"></i> 05/01</span> </div>
+            </div>
+          </div>
+          <div class="inner-testimonial">
+            <div class="tm-tagline"> <i class="fa fa-quote-left" aria-hidden="true"></i> <span> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</span> </div>
+            <div class="tm-userinfo">
+              <div class="tm-userimg"> <img src="images/testimonial-2.png" alt="testimonial" /> </div>
+              <div class="tm-userbio">
+                <h4 class="tm-title"> Sara Pearson</h4>
+                <p class="tm-designation">Founder of Realten inc.</p>
+                <span><i class="fa fa-calendar-o" aria-hidden="true"></i> 05/01</span> </div>
+            </div>
+        -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /Testiominals --> 
+
+<!-- Subscribe -->
+<!-- <section id="subscribe" class="subscribe">
+  <div class="container">
+    <div class="row">
+      <h2 class="block-title"><strong>Subscribe for</strong> Next eventary</h2>
+      <div class="subscribe-form">
+        <form>
+          <div class="input-group margin-bottom-sm col-lg-5 col-md-5 col-sm-12  col-xs-12"> <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+            <input class="form-control" type="text" placeholder="First Name">
+          </div>
+          <div class="input-group margin-bottom-sm col-lg-5  col-md-5 col-sm-12  col-xs-12"> <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+            <input class="form-control" type="text" placeholder="Email address">
+          </div>
+          <div class="col-sm-12 col-xs-12">
+            <p class="no-margin subscribe-text">We guarantee 100% privacy. Your information will not be shared.</p>
+            <a href="#" class="register-now-btn">Get Every Info of Our Next Camp Eventery</a> </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- /Subscribe --> 
+
+<!-- Contact Us  -->
+
+<!-- /Contact Us --> 
+
+<!-- Bottom Social -->
+<!-- Logo Mintic, Tecnalia, Cymetria -->
+<div id="elements" class="bottom-social" style="background-color: #f2f2f2;"> 
+  <img width="300px" src="images/sponsors/logo_mintic.png" alt="MinTIC">  
+  <img width="200px" style="margin: 0 25px 0 25px;" src="images/sponsors/logo_tecnalia.png" alt="Tecnalia">
+  <img width="250px" src="images/sponsors/logo_cymetria.png" alt="Cymetria">
+</div>
+<!-- /Bottom Social --> 
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-12">
+          <div class="footer-left">
+            <p class="no-margin"><strong>Talent Fest Logo</strong></p>
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+          <div class="footer-right hidden-xs">
+            <ul>
+              <li><a href="/">Inicio</a><span>|</span></li>
+              <li><a href="#schedule">Talent Talks</a><span>|</span></li>
+              <li><a href="#">Talent Tour</a><span>|</span></li>
+              <li><a href="https://www.talent-fest.com/empresas">Empresas</a><span>|</span></li>
+              <li><a href="https://www.talent-fest.com/vacantes">Vacantes</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="elements" class="bottom-social"> <a href="" class="fa fa-facebook" aria-hidden="true"></a> <a href="" class="fa fa-twitter" aria-hidden="true"></a> <a href="" class="fa fa-linkedin" aria-hidden="true"></a> <a href="" class="fa fa-instagram" aria-hidden="true"></a> </div>
+  <div class="footer-bottom">
+    <div class="copytight">
+      <p>&copy; 2022 Talent Fest - Todos los derechos reservados</p>
+    </div>
+  </div>
+  <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
+</footer>
+<!-- .Footer --> 
+
+<div class="annual-model-box">
+  <div class="modal  fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <iframe class="embed-responsive-item" id="ytplayer" src="https://www.youtube.com/embed/5Peo-ivmupE?&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- attach JavaScripts --> 
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
+<!-- <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>  -->
+
+    <script>
+      function initMap() {
+        var uluru = {lat: 4.642280, lng: -74.079663};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom:14,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnBukuPx3MQ3bJLLD-e4NKHL56g1nsRXM&callback=initMap"> </script>
+<script src="js/iscroll.js"></script> 
+<script src="js/menu.js" charset="utf-8"></script> 
+<script src="js/owl.carousel.min.js"></script> 
+<script src="js/classie.js"></script> 
+<script type="text/javascript" src="js/custom-menu.js"></script>
+<script type="text/javascript" src="js/eventpremium-script.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+</body>
 </html>
