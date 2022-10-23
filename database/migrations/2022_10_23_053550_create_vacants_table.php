@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('vacants', function (Blueprint $table) {
             $table->id();
+            $table->string('company');
+            $table->string('position');
+            $table->string('modality');
+            $table->string('salary');
+            $table->string('email_company');
             $table->timestamps();
         });
     }

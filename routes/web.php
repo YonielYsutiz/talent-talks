@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\vacantController;
+use App\Http\Controllers\VacantController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,8 @@ use App\Http\Controllers\vacantController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('index', [App\Http\Controllers\vacantController::class, 'index']);
+Route::resource('vacants', VacantController::class);
+Route::resource('users', UserController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
