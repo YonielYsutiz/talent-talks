@@ -19,11 +19,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class UsersViewVideo extends Model
 {
-    
+    protected $table = "users_view_video";
+
     static $rules = [
 		'user_id' => 'required',
 		'slug_video' => 'required',
-		'points' => 'required',
+		// 'points' => 'required',
     ];
 
     protected $perPage = 20;

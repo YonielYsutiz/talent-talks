@@ -46,4 +46,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getPoints($user_id) {
+        $points_for_video = UsersViewVideo::where('user_id', $user_id)->get()->sum('points');
+        $points_for_vacant = UsersViewVacant::where('user_id', $user_id)->get()->sum('points');
+        return $points_for_video + $points_for_vacant;
+    }
 }

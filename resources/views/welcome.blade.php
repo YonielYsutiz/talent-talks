@@ -23,6 +23,67 @@
 <!-- <link href="css/style2.css" rel="stylesheet" /> -->
 <link href="css/responsive.css" rel="stylesheet" />
 
+  <style>
+      .card-header {
+          background-color: #f25421;
+      }
+
+      label {
+          color: #000;
+      }
+
+      .form-control {
+          color: #212529 !important;
+      }
+      .card-body {
+          color: #000;
+      }
+      .modal-content {
+          color: #000;
+      }
+      .modal-header {
+          display: inherit;
+      }
+      .small-now-btn {
+            background-color: #f25421;
+            border-radius: 50px;
+            color: #fff;
+            display: inline-block;
+            font-family: "Montserrat-bold";
+            font-size: 10px;
+            margin-left: 20px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border-width: 0px;
+        }
+  </style>
+  <script>
+      function sendViewVideo(slug_video, id_user) {
+        const url = 'http://127.0.0.1:8000/api/UsersViewVideo';
+        const data = {
+          user_id: parseInt(id_user),
+          slug_video: slug_video
+        }
+        const params = {
+          headers: {
+            "Content-Type": "application/json;",
+            "Accept": "application/json;",
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: JSON.stringify(data),
+          method: "POST"
+        };
+
+        fetch(url, params).then(function(response) {
+          return response.json();
+        }).then(function(data) {
+          console.log(data);
+        }).catch(function(error) {
+          console.log(error.message);
+        });
+
+      }
+  </script>
 </head>
 
 <body>
@@ -209,14 +270,14 @@
         <h3>¿Qué es el Kit De Empleabilidad?</h3>
         <p style="font-size: 20px; max-width:500px; margin: 0 auto;">El kit contiene una guía práctica para que los participantes encuentren su próximo empleo. Contiene increibles beneficios y claves para alcanzar el éxito en tu proceso de vinculación laboral.
         </p>
-        <div class="register-now-section">  <a href="https://www.talent-fest.com/kit" class="register-now-btn">Descargar Kit</a> </div>
+        <div class="register-now-section">  <a href="/kit" class="register-now-btn">Descargar Kit</a> </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- fourth section -->
-<section id="speakers" class="speakers" id="talent-fest-talks">
+<section class="speakers" id="talent-fest-talks">
   <div class="container">
     <div class="row">
       <h2 class="block-title"><strong>Talent Talks</strong></h2>
@@ -224,7 +285,13 @@
         <div class="speaker-block"> <img src="images/speaker.jpg" alt="Event Premium" class="img-responsive">
           <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
             <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
-            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+            <div class="social-meta">
+              @guest
+                <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @else
+                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @endguest
+            </div>
           </div>
         </div>
       </div>
@@ -240,7 +307,13 @@
         <div class="speaker-block"> <img src="images/speaker-2.jpg" alt="Event Premium" class="img-responsive">
             <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
             <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
-            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+            <div class="social-meta"> 
+              @guest
+                <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @else
+                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital_1', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @endguest
+            </div>
           </div>
         </div>
       </div>
@@ -248,7 +321,13 @@
         <div class="speaker-block"> <img src="images/speaker-3.jpg" alt="Event Premium" class="img-responsive">
             <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
             <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
-            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+            <div class="social-meta"> 
+              @guest
+                <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @else
+                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital_2', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @endguest
+            </div>
           </div>
         </div>
       </div>
@@ -256,7 +335,13 @@
         <div class="speaker-block"> <img src="images/speaker-4.jpg" alt="Event Premium" class="img-responsive">
           <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
             <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
-            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+            <div class="social-meta"> 
+              @guest
+                <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @else
+                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital_3', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @endguest
+            </div>
           </div>
         </div>
       </div>
@@ -264,7 +349,13 @@
         <div class="speaker-block"> <img src="images/speaker-5.jpg" alt="Event Premium" class="img-responsive">
           <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
             <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
-            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+            <div class="social-meta"> 
+              @guest
+                <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @else
+                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital_4', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @endguest
+            </div>
           </div>
         </div>
       </div>
@@ -272,7 +363,13 @@
         <div class="speaker-block"> <img src="images/speaker-6.jpg" alt="Event Premium" class="img-responsive">
           <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
             <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
-            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+            <div class="social-meta"> 
+              @guest
+                <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @else
+                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital_5', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @endguest
+            </div>
           </div>
         </div>
       </div>
@@ -280,11 +377,18 @@
         <div class="speaker-block"> <img src="images/speaker-7.jpg" alt="Event Premium" class="img-responsive">
           <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
             <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
-            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+            <div class="social-meta"> 
+              @guest
+                <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @else
+                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital_6', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @endguest
+            </div>
           </div>
         </div>
       </div>
     </div>
+
      <!-- <p class="text-center"><a href="speakers.html" class="register-now-btn styles-button">Speakers Styles <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </p> -->
   </div>
 </section>
@@ -829,7 +933,7 @@
           <div class="footer-right hidden-xs">
             <ul>
               <li><a href="/">Inicio</a><span>|</span></li>
-              <li><a href="#schedule">Talent Talks</a><span>|</span></li>
+              <li><a href="#talent-fest-talks">Talent Talks</a><span>|</span></li>
               <li><a href="#">Talent Tour</a><span>|</span></li>
               <li><a href="/vacants/create">Empresas</a><span>|</span></li>
               <li><a href="/vacants">Vacantes</a></li>
@@ -865,6 +969,9 @@
           </div>
       </div>
   </div>
+
+  <!-- Modal request authenticated -->
+  @include('auth.modal-login')
 </div>
 
 <!-- attach JavaScripts --> 
@@ -888,6 +995,7 @@
           position: uluru,
           map: map
         });
+
       }
     </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnBukuPx3MQ3bJLLD-e4NKHL56g1nsRXM&callback=initMap"> </script>

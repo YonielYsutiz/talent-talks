@@ -24,3 +24,4 @@ Route::resource('users', UserController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/kit', [App\Http\Controllers\KitController::class, 'index'])->name('kit');

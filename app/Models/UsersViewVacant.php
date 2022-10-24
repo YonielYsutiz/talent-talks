@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class UsersViewVacant extends Model
 {
+    protected $table = "users_view_vacant";
     
     static $rules = [
 		'user_id' => 'required',
@@ -33,8 +34,16 @@ class UsersViewVacant extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id','vacant_id','points'];
+    protected $fillable = ['user_id', 'vacant_id', 'points'];
 
+    public static function saveView($user_id, $vacant_id, $points = 20) {
+      $view_register = UsersViewVacant::where('user_id', $user_id)->where('vacant_id', $vacant_id)->first();
 
+      if($view_register == null) {
+        return UsersViewVacant::create(['user_id' => $user_id, 'vacant_id' => $vacant_id, 'points' => $points]);
+      }
+
+      return $view_register;
+    }
 
 }
