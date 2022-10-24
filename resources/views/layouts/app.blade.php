@@ -57,6 +57,9 @@
         .modal-header {
             display: inline;
         }
+        .well {
+            color: #000;
+        }
     </style>
 
 </head>
@@ -75,7 +78,13 @@
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <div class="footer-right hidden-xs">
                                 <ul>
-                                    <li><a href="/">Inicio</a><span>|</span></li>
+                                    <li>
+                                        @guest
+                                            <a href="/">Inicio</a><span>|</span>
+                                        @else
+                                            <a href="/home">Inicio</a><span>|</span>
+                                        @endguest
+                                    </li>
                                     <li><a href="#schedule">Talent Talks</a><span>|</span></li>
                                     <!-- <li><a href="#">Talent Tour</a><span>|</span></li> -->
                                     <li><a href="/vacants/create">Empresas</a><span>|</span></li>
@@ -91,7 +100,7 @@
                                         <li>
                                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
+                                                {{ __('Salir') }}
                                             </a>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                 @csrf

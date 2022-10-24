@@ -45,10 +45,13 @@ class UsersViewVideoController extends Controller
     {
         request()->validate(UsersViewVideo::$rules);
 
-        $usersViewVideo = UsersViewVideo::create($request->all());
+        $view_register = UsersViewVideo::where('user_id', $request->user_id)->where('slug_video', $request->slug_video)->first();
 
-        return redirect()->route('users-view-videos.index')
-            ->with('success', 'UsersViewVideo created successfully.');
+        if($view_register == null) {
+            return UsersViewVideo::create(['user_id' => $request->user_id, 'slug_video' => $request->slug_video, 'points' => 20]);
+        }
+
+        return $view_register;
     }
 
     /**

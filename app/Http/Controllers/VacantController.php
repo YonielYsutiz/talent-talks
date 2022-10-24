@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UsersViewVacant;
 use App\Models\Vacant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class VacantController
@@ -78,6 +80,7 @@ class VacantController extends Controller
     public function show($id)
     {
         $vacant = Vacant::find($id);
+        $saveView = UsersViewVacant::saveView(Auth::user()->id, $id);
 
         return view('vacant.show', compact('vacant'));
     }

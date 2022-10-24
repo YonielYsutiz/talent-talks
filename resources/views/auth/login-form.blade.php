@@ -2,17 +2,21 @@
     @csrf
 
     <div class="row mb-3">
-        <label for="number_identification" class="col-md-4 col-form-label text-md-end">{{ __('Cedula') }}</label>
+        <label for="number_identification" class="col-md-2 col-form-label">{{ __('Cedula') }}</label>
 
-        <div class="col-md-6">
+        <div class="col-md-5">
             <input id="number_identification" type="number" class="form-control @error('number_identification') is-invalid @enderror" name="number_identification" value="{{ old('number_identification') }}" required autocomplete="number_identification" autofocus>
-            <!-- <input id="email" type="text" class="form-control @error('number_identification') is-invalid @enderror" name="email" value="{{ old('number_identification') }}" required autocomplete="number_identification" autofocus> -->
 
             @error('number_identification')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="small-now-btn">
+                {{ __('Iniciar sesion') }}
+            </button>
         </div>
     </div>
 
@@ -56,17 +60,17 @@
         </div>
     </div> -->
 
-    <div class="row mb-0">
-        <div class="col-md-8 offset-md-4">
+    <!-- <div class="row mb-0">
+        <div class="col-md-12">
             <button type="submit" class="btn btn-primary">
                 {{ __('Iniciar sesion') }}
             </button>
 
-            <!-- @if (Route::has('password.request'))
+            @if (Route::has('password.request'))
                 <a class="btn btn-link" href="{{ route('password.request') }}">
                     {{ __('Forgot Your Password?') }}
                 </a>
-            @endif -->
+            @endif
         </div>
-    </div>
+    </div> -->
 </form>
