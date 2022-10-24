@@ -49,6 +49,13 @@
             margin-left: 20px;
             padding: 10px 20px;
             text-transform: uppercase;
+            border-width: 0px;
+        }
+        .modal-content {
+            color: #000;
+        }
+        .modal-header {
+            display: inline;
         }
     </style>
 
@@ -195,7 +202,8 @@
     <script src="/js/menu.js" charset="utf-8"></script>
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/classie.js"></script>
-    <script type="text/javascript" src="/js/custom-menu.js"></script>
+    <!-- <script type="text/javascript" src="/js/bootstrap.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/js/custom-menu.js"></script> -->
     <script type="text/javascript" src="/js/eventpremium-script.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 </body>

@@ -6,9 +6,7 @@
 
 @section('content')
     <div class="container">
-        <div class="col-sm-12 col-xs-12" style="text-align:center;">
-            <p class="block-title"><strong>VACANTES</strong></p>
-        </div>
+        <p class="block-title" style="text-align: center;"><strong>VACANTES</strong></p>
         <div class="row">
             <div class="col-sm-3">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -22,10 +20,13 @@
                 <div class="card">
                         <div class="card-body">
                             <h3>Ciudades</h3>
-                            <div class="list-group">
-                                @foreach ($position_availables as $position)
-                                    <a href="/vacants?position={{$position}}"><button type="button" class="list-group-item">{{ $position }}</button></a>
-                                @endforeach
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Selecciona una ciudad
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Bogota</a></li>
+                                </ul>
                             </div>
 
                             <h3>Cargo</h3>
@@ -60,9 +61,15 @@
                                 <b>{{ $vacant->company }}</b> | {{ $vacant->position }} | {{ $vacant->city }}
                             </div>
                             <div class="float-right">
-                                <a href="{{ route('vacants.show',$vacant->id) }}" class="small-now-btn m-2">
-                                {{ __('ver datos para aplicar') }}
-                                </a>
+                                @guest
+                                    <button class="small-now-btn m-2" data-toggle="modal" data-target="#myModal"> {{ __('ver datos para aplicar') }}</button>
+
+                                    
+                                @else
+                                    <a href="{{ route('vacants.show',$vacant->id) }}" class="small-now-btn m-2">
+                                        {{ __('ver datos para aplicar') }}
+                                    </a>
+                                @endguest
                             </div>
                         </div>
                         
@@ -71,6 +78,10 @@
 
 
                 {!! $vacants->links() !!}
+
+                <!-- Modal request authenticated -->
+                @include('auth.modal-login')
+
             </div>
         </div>
     </div>
