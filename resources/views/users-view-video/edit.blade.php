@@ -1,24 +1,26 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Create Vacant
+    Update Users View Video
 @endsection
 
 @section('content')
     <section class="content container-fluid">
-        <p class="block-title" style="text-align:center;"><strong>Crear vacantes</strong></p>
-        <div class="row">
-            <div class="col-md-6 mx-auto">
+        <div class="">
+            <div class="col-md-12">
+
                 @includeif('partials.errors')
+
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Registro de Vacantes</span>
+                        <span class="card-title">Update Users View Video</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('vacants.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('users-view-videos.update', $usersViewVideo->id) }}"  role="form" enctype="multipart/form-data">
+                            {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('vacant.form')
+                            @include('users-view-video.form')
 
                         </form>
                     </div>
