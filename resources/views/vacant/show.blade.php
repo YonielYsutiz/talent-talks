@@ -5,18 +5,15 @@
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
+    <div class="content container-fluid">
+        <p class="block-title" style="text-align: center;"><strong>VACANTES | {{ $vacant->company }} </strong></p>
+                    <a href="{{ route('vacants.index') }}" class="small-now-btn">
+                {{ __('Volver') }}
+            </a>
+        <div class="float-right">
+        
         <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">VACANTE | {{ $vacant->company }}</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('vacants.index') }}"> Back</a>
-                        </div>
-                    </div>
+            <div class="col-md-6: center;" style="text-align: center;" >
 
                     <div class="card-body">
                         
@@ -45,5 +42,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 @endsection
