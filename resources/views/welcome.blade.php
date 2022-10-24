@@ -61,8 +61,8 @@
           <li><a href="https://www.talent-fest.com/">Inicio</a><span>|</span></li>
           <li><a href="#talent-fest-talks">Talent Talks</a><span>|</span></li>
           <li><a href="#talent-fest-tour">Talent Tour</a><span>|</span></li>
-          <li><a href="/empresas">Empresas</a><span>|</span></li>
-          <li><a href="/vacants/create">Vacantes</a></li>
+          <li><a href="/vacants/create">Empresas</a><span>|</span></li>
+          <li><a href="/vacants">Vacantes</a></li>
         </ul>
       </div>
     </div>
@@ -81,8 +81,8 @@
            <li><a href="https://www.talent-fest.com/" class="drawer-menu-item">Inicio</a></li>
           <li><a href="#talent-fest-talks" class="drawer-menu-item">Talent Talks</a></li>
           <li><a href="#talent-fest-tour" class="drawer-menu-item">Talent Tour</a></li>
-          <li><a href="https://www.talent-fest.com/empresas" class="drawer-menu-item">Empresas</a></li>
-          <li><a href="https://www.talent-fest.com/vacantes" class="drawer-menu-item">Vacantes</a></li>
+          <li><a href="/vacants/create" class="drawer-menu-item">Empresas</a></li>
+          <li><a href="/vacants" class="drawer-menu-item">Vacantes</a></li>
         </ul>
       </nav>
     </div>
@@ -831,8 +831,8 @@
               <li><a href="/">Inicio</a><span>|</span></li>
               <li><a href="#schedule">Talent Talks</a><span>|</span></li>
               <li><a href="#">Talent Tour</a><span>|</span></li>
-              <li><a href="https://www.talent-fest.com/empresas">Empresas</a><span>|</span></li>
-              <li><a href="https://www.talent-fest.com/vacantes">Vacantes</a></li>
+              <li><a href="/vacants/create">Empresas</a><span>|</span></li>
+              <li><a href="/vacants">Vacantes</a></li>
               
             </ul>
           </div>

@@ -5,73 +5,71 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
+        <div class="col-sm-12 col-xs-12" style="text-align:center;">
+            <p class="block-title"><strong>VACANTES</strong></p>
+        </div>
         <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title">
-                                {{ __('Vacant') }}
-                            </span>
-
-                             <div class="float-right">
-                                <a href="{{ route('vacants.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
-                              </div>
-                        </div>
-                    </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
-
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>No</th>
-                                        
-										<th>Company</th>
-										<th>Position</th>
-										<th>Modality</th>
-										<th>Salary</th>
-										<th>Email Company</th>
-
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($vacants as $vacant)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $vacant->company }}</td>
-											<td>{{ $vacant->position }}</td>
-											<td>{{ $vacant->modality }}</td>
-											<td>{{ $vacant->salary }}</td>
-											<td>{{ $vacant->email_company }}</td>
-
-                                            <td>
-                                                <form action="{{ route('vacants.destroy',$vacant->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('vacants.show',$vacant->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('vacants.edit',$vacant->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+            <div class="col-sm-3">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h4 style="font-family: montserrat-semibold; color: #f25421; text-transform: uppercase;">Filtros</h4>
+                    <div class="float-right">
+                        <a href="/vacants" class="small-now-btn">
+                            {{ __('eliminar filtros') }}
+                        </a>
                     </div>
                 </div>
+                <div class="card">
+                        <div class="card-body">
+                            <h3>Ciudades</h3>
+                            <div class="list-group">
+                                @foreach ($position_availables as $position)
+                                    <a href="/vacants?position={{$position}}"><button type="button" class="list-group-item">{{ $position }}</button></a>
+                                @endforeach
+                            </div>
+
+                            <h3>Cargo</h3>
+                            <div class="list-group">
+                                @foreach ($position_availables as $position)
+                                    <a href="/vacants?position={{$position}}"><button type="button" class="list-group-item">{{ $position }}</button></a>
+                                @endforeach
+                            </div>
+
+                            <h3>Modalidad</h3>
+                            <div class="list-group">
+                                @foreach ($modalities as $modality)
+                                    <a href="/vacants?modality={{$modality}}"><button type="button" class="list-group-item">{{ $modality }}</button></a>
+                                @endforeach
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+            <div class="col-sm-9">
+                <h4 style="font-family: montserrat-semibold; color: #f25421; text-transform: uppercase;">vacantes disponibles</h4>
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div>
+                @endif
+
+                @foreach ($vacants as $vacant)
+                    <div class="card card-default mb-3">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="card-body">
+                                <b>{{ $vacant->company }}</b> | {{ $vacant->position }} | {{ $vacant->city }}
+                            </div>
+                            <div class="float-right">
+                                <a href="{{ route('vacants.show',$vacant->id) }}" class="small-now-btn m-2">
+                                {{ __('ver datos para aplicar') }}
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                @endforeach
+
+
                 {!! $vacants->links() !!}
             </div>
         </div>

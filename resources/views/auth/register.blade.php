@@ -12,6 +12,20 @@
                         @csrf
 
                         <div class="row mb-3">
+                            <label for="number_identification" class="col-md-4 col-form-label text-md-end">{{ __('Cedula') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="number_identification" type="text" class="form-control @error('number_identification') is-invalid @enderror" name="number_identification" value="{{ old('number_identification') }}" required autocomplete="number_identification" autofocus>
+
+                                @error('number_identification')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <!-- <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
@@ -23,9 +37,9 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="row mb-3">
+                        <!-- <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
@@ -37,9 +51,9 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="row mb-3">
+                        <!-- <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -51,20 +65,20 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="row mb-3">
+                        <!-- <div class="row mb-3">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Registrar') }}
                                 </button>
                             </div>
                         </div>

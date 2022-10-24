@@ -16,11 +16,29 @@ class VacantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $vacants = Vacant::paginate();
+        $position_filter = $request->input('position');
+        $modality_filter = $request->input('modality');
+        $position_availables = [
+            'Desarrollador Backend',
+            'Desarrollador Frontend',
+            'Desarrollador FullStack',
+            'Desarrollador Móvil',
+            'DevOps',
+            'Desarrollador IA/ML',
+            'Desarrollador BlockChain',
+            'Otro'
+        ];
+        $modalities = [
+            'Remoto',
+            'Presencial',
+            'Hibrida'
+        ];
 
-        return view('vacant.index', compact('vacants'))
+        $vacants = Vacant::position($position_filter)->modality($modality_filter)->paginate();
+
+        return view('vacant.index', compact('vacants', 'position_availables', 'modalities'))
             ->with('i', (request()->input('page', 1) - 1) * $vacants->perPage());
     }
 

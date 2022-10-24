@@ -28,11 +28,27 @@
         .card-header {
             background-color: #f25421;
         }
+
         label {
             color: #000;
         }
-        .form-control { 
+
+        .form-control {
             color: #212529 !important;
+        }
+        .card-body {
+            color: #000;
+        }
+        .small-now-btn {
+            background-color: #f25421;
+            border-radius: 50px;
+            color: #fff;
+            display: inline-block;
+            font-family: "Montserrat-bold";
+            font-size: 10px;
+            margin-left: 20px;
+            padding: 10px 20px;
+            text-transform: uppercase;
         }
     </style>
 
@@ -54,10 +70,28 @@
                                 <ul>
                                     <li><a href="/">Inicio</a><span>|</span></li>
                                     <li><a href="#schedule">Talent Talks</a><span>|</span></li>
-                                    <li><a href="#">Talent Tour</a><span>|</span></li>
+                                    <!-- <li><a href="#">Talent Tour</a><span>|</span></li> -->
                                     <li><a href="/vacants/create">Empresas</a><span>|</span></li>
                                     <li><a href="/vacants">Vacantes</a><span>|</span></li>
-                                    <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                                    @guest
+                                        @if (Route::has('login'))
+                                            <li><a href="{{ route('login') }}">{{ __('Login') }}</a><span>|</span></li>
+                                        @endif
+                                        @if (Route::has('register'))
+                                            <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                                        @endif
+                                    @else
+                                        <li>
+                                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                        </li>
+                                    @endguest
+
                                 </ul>
                             </div>
                             <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">

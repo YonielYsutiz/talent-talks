@@ -23,11 +23,12 @@ class Vacant extends Model
 {
     
     static $rules = [
-		'company' => 'required',
-		'position' => 'required',
-		'modality' => 'required',
-		'salary' => 'required',
-		'email_company' => 'required',
+		  'company' => 'required',
+		  'position' => 'required',
+		  'modality' => 'required',
+		  'salary' => 'required',
+		  'email_company' => 'required',
+      'city' => 'required'
     ];
 
     protected $perPage = 20;
@@ -37,8 +38,21 @@ class Vacant extends Model
      *
      * @var array
      */
-    protected $fillable = ['company','position','modality','salary','email_company'];
+    protected $fillable = ['company','position','modality','salary','email_company', 'city'];
 
+    
+    public function scopePosition($query, $position){
 
+      if (empty($position)) return;
+      return $query->where('position', $position);
+
+    }
+
+    public function scopeModality($query, $modality){
+
+      if (empty($modality)) return;
+      return $query->where('modality', $modality);
+
+    }
 
 }
