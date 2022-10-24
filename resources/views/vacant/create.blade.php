@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content">
-        <p class="block-title" style="text-align: center;"><strong>Crear vacantes</strong></p>
+        <p class="block-title" style="text-align: center;"><strong>Crear vacante</strong></p>
         <div class="row">
             <div class="col-md-6 mx-auto">
                 @includeif('partials.errors')
