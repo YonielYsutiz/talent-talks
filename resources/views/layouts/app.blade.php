@@ -85,7 +85,7 @@
                                             <a href="/home">Inicio</a><span>|</span>
                                         @endguest
                                     </li>
-                                    <li><a href="#schedule">Talent Talks</a><span>|</span></li>
+                                    <li><a href="/#talent-fest-talks">Talent Talks</a><span>|</span></li>
                                     <!-- <li><a href="#">Talent Tour</a><span>|</span></li> -->
                                     <li><a href="/vacants/create">Empresas</a><span>|</span></li>
                                     <li><a href="/vacants">Vacantes</a><span>|</span></li>
@@ -94,7 +94,7 @@
                                             <li><a href="{{ route('login') }}">{{ __('Login') }}</a><span>|</span></li>
                                         @endif
                                         @if (Route::has('register'))
-                                            <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                                            <!-- <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li> -->
                                         @endif
                                     @else
                                         <li>

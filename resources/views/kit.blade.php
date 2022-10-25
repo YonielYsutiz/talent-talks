@@ -58,7 +58,7 @@
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse-main">
         <ul class="nav navbar-nav">
-          <li><a href="https://www.talent-fest.com">Inicio</a></li>
+          <li><a href="/">Inicio</a></li>
         </ul>
       </div>
     </div>
@@ -74,11 +74,11 @@
             <p class="no-margin"><strong>Talent Fest</strong></p>
           </div>
          <ul class="drawer-menu">
-          <li><a href="http://glorywebsdev.com/eventcamp/html/eventpremium/" class="drawer-menu-item">Inicio</a></li>
-          <li><a href="http://glorywebsdev.com/eventcamp/html/eventpremium/#speakers" class="drawer-menu-item">Talent Talks</a></li>
-          <li><a href="http://glorywebsdev.com/eventcamp/html/eventpremium/#schedule" class="drawer-menu-item">Talent Tour</a></li>
-          <li><a href="http://glorywebsdev.com/eventcamp/html/eventpremium/#testimonial" class="drawer-menu-item">Empresas</a></li>
-          <li><a href="http://glorywebsdev.com/eventcamp/html/eventpremium/#prices" class="drawer-menu-item">Vacantes</a></li>
+          <li><a href="/" class="drawer-menu-item">Inicio</a></li>
+          <li><a href="/#talent-fest-talks" class="drawer-menu-item">Talent Talks</a></li>
+          <li><a href="/#talent-fest-tour" class="drawer-menu-item">Talent Tour</a></li>
+          <li><a href="/vacants/create" class="drawer-menu-item">Empresas</a></li>
+          <li><a href="/vacants" class="drawer-menu-item">Vacantes</a></li>
         </ul>
       </nav>
     </div>
@@ -101,11 +101,11 @@
         <div class="col-md-9 col-sm-9 col-xs-12">
           <div class="footer-right hidden-xs">
             <ul>
-              <li><a href="#speakers">Inicio</a><span>|</span></li>
-              <li><a href="#schedule">Talent Talks</a><span>|</span></li>
-              <li><a href="#">Talent Tour</a><span>|</span></li>
-              <li><a href="#prices">Empresas</a><span>|</span></li>
-              <li><a href="#prices">Vacantes</a></li>
+              <li><a href="/">Inicio</a><span>|</span></li>
+              <li><a href="/#talent-fest-talks">Talent Talks</a><span>|</span></li>
+              <li><a href="/#talent-fest-tour">Talent Tour</a><span>|</span></li>
+              <li><a href="/vacants/create">Empresas</a><span>|</span></li>
+              <li><a href="/vacants">Vacantes</a></li>
             </ul>
           </div>
         </div>

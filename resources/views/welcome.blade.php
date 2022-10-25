@@ -119,7 +119,11 @@
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse-main">
         <ul class="nav navbar-nav">
-          <li><a href="https://www.talent-fest.com/">Inicio</a><span>|</span></li>
+          @guest
+            <li><a href="/">Inicio</a><span>|</span></li>
+          @else
+            <li><a href="/home">Inicio</a><span>|</span></li>
+          @endguest
           <li><a href="#talent-fest-talks">Talent Talks</a><span>|</span></li>
           <li><a href="#talent-fest-tour">Talent Tour</a><span>|</span></li>
           <li><a href="/vacants/create">Empresas</a><span>|</span></li>
@@ -139,7 +143,7 @@
             <p class="no-margin"><strong>Talent Fest</strong></p>
           </div>
          <ul class="drawer-menu">
-           <li><a href="https://www.talent-fest.com/" class="drawer-menu-item">Inicio</a></li>
+           <li><a href="/" class="drawer-menu-item">Inicio</a></li>
           <li><a href="#talent-fest-talks" class="drawer-menu-item">Talent Talks</a></li>
           <li><a href="#talent-fest-tour" class="drawer-menu-item">Talent Tour</a></li>
           <li><a href="/vacants/create" class="drawer-menu-item">Empresas</a></li>
@@ -167,7 +171,7 @@
           </div>
         </div>
         <p class="count-down-description">Únete a nuestros eventos híbridos en todo el país. </p>
-        <a href="#schedule" class="register-now-btn">Talent Tour <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div>
+        <a href="#talent-fest-tour" class="register-now-btn">Talent Tour <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div>
     </div>
   </div>
 </section>
@@ -796,15 +800,12 @@
         <h3>¿Buscando talento?</h3>
         <p style="font-size: 20px; max-width:500px; margin: 0 auto;">En TALENT FEST encontraras miles de talentos tecnológicos en nuestros eventos híbridos. Registra tus ofertas laborales y nos encargaremos de conectar con el mejor talento de Latam.
         </p>
-        <div class="register-now-section">  <a href="https://www.talent-fest.com/empresas" class="register-now-btn">Mas info</a> </div>
+        <div class="register-now-section">  <a href="/vacants/create" class="register-now-btn">Mas info</a> </div>
       </div>
     </div>
   </div>
 </section>
 <!-- section Talent Fest Tour --> 
-
-
-
 
 <!-- Testiominals -->
 <section id="testiominal" class="testiominals">
@@ -934,7 +935,7 @@
             <ul>
               <li><a href="/">Inicio</a><span>|</span></li>
               <li><a href="#talent-fest-talks">Talent Talks</a><span>|</span></li>
-              <li><a href="#">Talent Tour</a><span>|</span></li>
+              <li><a href="#talent-fest-tour">Talent Tour</a><span>|</span></li>
               <li><a href="/vacants/create">Empresas</a><span>|</span></li>
               <li><a href="/vacants">Vacantes</a></li>
               
