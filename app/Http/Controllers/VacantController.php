@@ -22,10 +22,11 @@ class VacantController extends Controller
     {
         $position_filter = $request->input('position');
         $modality_filter = $request->input('modality');
+        $city_filter = $request->input('city');
         $position_availables = [
+            'Desarrollador FullStack',
             'Desarrollador Backend',
             'Desarrollador Frontend',
-            'Desarrollador FullStack',
             'Desarrollador Móvil',
             'DevOps',
             'Desarrollador IA/ML',
@@ -38,7 +39,7 @@ class VacantController extends Controller
             'Hibrida'
         ];
 
-        $city =[
+        $cities =[
             'Amazonas',
             'Antioquia',
             'Arauca',
@@ -47,11 +48,11 @@ class VacantController extends Controller
             'Bolivar',
             'Boyocá',
             'Caldas',
-            'caquetá',
-            'casanare',
+            'Caquetá',
+            'Casanare',
             'Cauca',
             'Cesar',
-            'chocó',
+            'Chocó',
             'Córdoba',
             'Cundinamarca',
             'Guainía',
@@ -74,9 +75,9 @@ class VacantController extends Controller
             'Vichada'
         ];
 
-        $vacants = Vacant::position($position_filter)->modality($modality_filter)->paginate();
+        $vacants = Vacant::position($position_filter)->modality($modality_filter)->city($city_filter)->paginate();
 
-        return view('vacant.index', compact('vacants', 'position_availables', 'modalities', 'city'))
+        return view('vacant.index', compact('vacants', 'position_availables', 'modalities', 'cities'))
             ->with('i', (request()->input('page', 1) - 1) * $vacants->perPage());
     }
 
@@ -89,9 +90,9 @@ class VacantController extends Controller
     {
         $vacant = new Vacant();
         $position_availables = [
+            'Desarrollador FullStack',
             'Desarrollador Backend',
             'Desarrollador Frontend',
-            'Desarrollador FullStack',
             'Desarrollador Móvil',
             'DevOps',
             'Desarrollador IA/ML',
@@ -112,11 +113,11 @@ class VacantController extends Controller
             'Bolivar',
             'Boyocá',
             'Caldas',
-            'caquetá',
-            'casanare',
+            'Caquetá',
+            'Casanare',
             'Cauca',
             'Cesar',
-            'chocó',
+            'Chocó',
             'Córdoba',
             'Cundinamarca',
             'Guainía',

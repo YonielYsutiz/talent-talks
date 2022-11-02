@@ -18,7 +18,7 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Company:</strong>
+                            <strong>Empresa:</strong>
                             {{ $vacant->company }}
                         </div>
                         <div class="form-group">

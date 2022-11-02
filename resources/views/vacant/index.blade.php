@@ -22,24 +22,31 @@
                             <h3>Ciudades</h3>
                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    Selecciona una ciudad
+                                    @if(empty(Request::get('city')))
+                                        Selecciona una ciudad
+                                    @else
+                                        {{ Request::get('city') }}
+                                    @endif
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="#">Bogota</a></li>
+                                    @foreach ($cities as $city)
+                                        <li><a href="/vacants?city={{$city}}">{{ $city }}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
 
                             <h3>Cargo</h3>
                             <div class="list-group">
+
                                 @foreach ($position_availables as $position)
-                                    <a href="/vacants?position={{$position}}"><button type="button" class="list-group-item">{{ $position }}</button></a>
+                                    <a href="/vacants?position={{$position}}" class="mb-1"><button type="button" class="list-group-item">{{ $position }}</button></a>
                                 @endforeach
                             </div>
 
                             <h3>Modalidad</h3>
                             <div class="list-group">
                                 @foreach ($modalities as $modality)
-                                    <a href="/vacants?modality={{$modality}}"><button type="button" class="list-group-item">{{ $modality }}</button></a>
+                                    <a href="/vacants?modality={{$modality}}" class="mb-1"><button type="button" class="list-group-item">{{ $modality }}</button></a>
                                 @endforeach
                             </div>
                         </div>

@@ -54,5 +54,11 @@ class Vacant extends Model
       return $query->where('modality', $modality);
 
     }
+    public function scopeCity($query, $city){
+
+      if (empty($city)) return;
+      return $query->where('city', $city);
+
+    }
 
 }

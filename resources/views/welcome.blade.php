@@ -45,17 +45,17 @@
           display: inherit;
       }
       .small-now-btn {
-            background-color: #f25421;
-            border-radius: 50px;
-            color: #fff;
-            display: inline-block;
-            font-family: "Montserrat-bold";
-            font-size: 10px;
-            margin-left: 20px;
-            padding: 10px 20px;
-            text-transform: uppercase;
-            border-width: 0px;
-        }
+          background-color: #f25421;
+          border-radius: 50px;
+          color: #fff;
+          display: inline-block;
+          font-family: "Montserrat-bold";
+          font-size: 10px;
+          margin-left: 20px;
+          padding: 10px 20px;
+          text-transform: uppercase;
+          border-width: 0px;
+      }
   </style>
   <script>
       function sendViewVideo(slug_video, id_user) {
@@ -293,7 +293,7 @@
               @guest
                 <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @else
-                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                <a href="#play-youtube" data-toggle="modal" data-target="#exampleModalLong" onclick="sendViewVideo('liderazgo_digital', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @endguest
             </div>
           </div>
@@ -303,7 +303,13 @@
         <div class="speaker-block"> <img src="images/speaker-1.jpg" alt="Event Premium" class="img-responsive">
           <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
             <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
-            <div class="social-meta"> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i></a>  </div>
+            <div class="social-meta"> 
+              @guest
+                <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @else
+                <a href="#play-youtube" data-toggle="modal" data-target="#exampleModalLong" onclick="sendViewVideo('liderazgo_digital_0', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+              @endguest
+            </div>
           </div>
         </div>
       </div>
@@ -315,7 +321,7 @@
               @guest
                 <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @else
-                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital_1', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                <a href="#play-youtube" data-toggle="modal" data-target="#exampleModalLong" onclick="sendViewVideo('liderazgo_digital_1', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @endguest
             </div>
           </div>
@@ -329,7 +335,7 @@
               @guest
                 <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @else
-                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital_2', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                <a href="#play-youtube" data-toggle="modal" data-target="#exampleModalLong" onclick="sendViewVideo('liderazgo_digital_2', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @endguest
             </div>
           </div>
@@ -343,7 +349,7 @@
               @guest
                 <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @else
-                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital_3', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                <a href="#play-youtube" data-toggle="modal" data-target="#exampleModalLong" onclick="sendViewVideo('liderazgo_digital_3', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @endguest
             </div>
           </div>
@@ -357,7 +363,7 @@
               @guest
                 <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @else
-                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital_4', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                <a href="#play-youtube" data-toggle="modal" data-target="#exampleModalLong" onclick="sendViewVideo('liderazgo_digital_4', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @endguest
             </div>
           </div>
@@ -371,7 +377,7 @@
               @guest
                 <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @else
-                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital_5', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                <a href="#play-youtube" data-toggle="modal" data-target="#exampleModalLong" onclick="sendViewVideo('liderazgo_digital_5', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @endguest
             </div>
           </div>
@@ -385,7 +391,7 @@
               @guest
                 <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @else
-                <a href="#play-youtube" onclick="sendViewVideo('liderazgo_digital_6', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                <a href="#play-youtube" data-toggle="modal" data-target="#exampleModalLong" onclick="sendViewVideo('liderazgo_digital_6', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
               @endguest
             </div>
           </div>
@@ -393,7 +399,7 @@
       </div>
     </div>
 
-     <!-- <p class="text-center"><a href="speakers.html" class="register-now-btn styles-button">Speakers Styles <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </p> -->
+  <!-- <p class="text-center"><a href="speakers.html" class="register-now-btn styles-button">Speakers Styles <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </p> -->
   </div>
 </section>
 <section id="schedule" class="schedule" id="talent-fest-tour">

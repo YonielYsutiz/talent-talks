@@ -55,7 +55,6 @@
 											<td>{{ $vacant->modality }}</td>
 											<td>{{ $vacant->salary }}</td>
 											<td>{{ $vacant->email_company }}</td>
-
                                             <td>
                                                 <form action="{{ route('vacants.destroy',$vacant->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('vacants.show',$vacant->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>

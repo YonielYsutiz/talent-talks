@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('email')->nullable();
+            $table->string('correo')->nullable();
             $table->string('type_identification')->default("CC");
             $table->string('number_identification')->nullable();
             $table->timestamp('email_verified_at')->nullable();
