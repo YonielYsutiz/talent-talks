@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -70,5 +73,27 @@ class LoginController extends Controller
         $this->incrementLoginAttempts($request);
 
         return $this->sendFailedLoginResponse($request);
+    }
+
+    protected function sendLoginResponse(Request $request)
+    {
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        if ($response = $this->authenticated($request, $this->guard()->user())) {
+            return $response;
+        }
+
+        return response()->json(['status'=> 1, 'msg'=>'autenticado con exito', 'user_id' => Auth::user()->id]);
+    }
+
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        // $errors =  ValidationException::withMessages([
+        //     $this->username() => [trans('auth.failed')],
+        // ]);
+
+        return response()->json(['status'=> 0, 'msg'=> 'Al parecer tu documento no se encuentra en el sistema']);
     }
 }

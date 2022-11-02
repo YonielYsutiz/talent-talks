@@ -98,7 +98,7 @@
                                         @endif
                                     @else
                                         <li>
-                                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); localStorage.removeItem('user_id');
                                                         document.getElementById('logout-form').submit();">
                                                 {{ __('Salir') }}
                                             </a>
@@ -207,6 +207,7 @@
         }
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnBukuPx3MQ3bJLLD-e4NKHL56g1nsRXM&callback=initMap"> </script>
+    <script src="/js/custom-login.js"></script>
     <script src="/js/iscroll.js"></script>
     <script src="/js/menu.js" charset="utf-8"></script>
     <script src="/js/owl.carousel.min.js"></script>

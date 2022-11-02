@@ -58,30 +58,34 @@
       }
   </style>
   <script>
-      function sendViewVideo(slug_video, id_user) {
-        const url = 'http://127.0.0.1:8000/api/UsersViewVideo';
-        const data = {
-          user_id: parseInt(id_user),
-          slug_video: slug_video
+      function sendViewVideo(slug_video, modal_display) {
+        if(window.localStorage.getItem('user_id') == undefined) {
+          return $('#myModal').modal('show');
+        } else {
+          $(`#${modal_display}`).modal('show');
+          const url = 'http://127.0.0.1:8000/api/UsersViewVideo';
+          const data = {
+            user_id: parseInt(window.localStorage.getItem('user_id')),
+            slug_video: slug_video
+          }
+          const params = {
+            headers: {
+              "Content-Type": "application/json;",
+              "Accept": "application/json;",
+              "Access-Control-Allow-Origin": "*",
+            },
+            body: JSON.stringify(data),
+            method: "POST"
+          };
+
+          fetch(url, params).then(function(response) {
+            return response.json();
+          }).then(function(data) {
+            console.log(data);
+          }).catch(function(error) {
+            console.log(error.message);
+          });
         }
-        const params = {
-          headers: {
-            "Content-Type": "application/json;",
-            "Accept": "application/json;",
-            "Access-Control-Allow-Origin": "*",
-          },
-          body: JSON.stringify(data),
-          method: "POST"
-        };
-
-        fetch(url, params).then(function(response) {
-          return response.json();
-        }).then(function(data) {
-          console.log(data);
-        }).catch(function(error) {
-          console.log(error.message);
-        });
-
       }
   </script>
 </head>
@@ -119,11 +123,7 @@
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse-main">
         <ul class="nav navbar-nav">
-          @guest
-            <li><a href="/">Inicio</a><span>|</span></li>
-          @else
-            <li><a href="/home">Inicio</a><span>|</span></li>
-          @endguest
+          <li><a href="/">Inicio</a><span>|</span></li>
           <li><a href="#talent-fest-talks">Talent Talks</a><span>|</span></li>
           <li><a href="#talent-fest-tour">Talent Tour</a><span>|</span></li>
           <li><a href="/vacants/create">Empresas</a><span>|</span></li>
@@ -286,15 +286,11 @@
     <div class="row">
       <h2 class="block-title"><strong>Talent Talks</strong></h2>
       <div class="col-md-3 col-sm-4 col-xs-6">
-        <div class="speaker-block"> <img src="images/speaker.jpg" alt="Event Premium" class="img-responsive">
+        <div class="speaker-block"> <img src="images/speaker.jpg" alt="Event Premium" class="img-responsive" id="">
           <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
             <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
             <div class="social-meta">
-              @guest
-                <a href="#play-youtube" data-toggle="modal" data-target="#myModal"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
-              @else
-                <a href="#play-youtube" data-toggle="modal" data-target="#exampleModalLong" onclick="sendViewVideo('liderazgo_digital', '{{ Auth::user()->id }}')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
-              @endguest
+                <a href="#exampleModalLong" onclick="sendViewVideo('liderazgo_digital', 'exampleModalLong')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -1006,6 +1002,7 @@
       }
     </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnBukuPx3MQ3bJLLD-e4NKHL56g1nsRXM&callback=initMap"> </script>
+<script src="js/custom-login.js"></script> 
 <script src="js/iscroll.js"></script> 
 <script src="js/menu.js" charset="utf-8"></script> 
 <script src="js/owl.carousel.min.js"></script> 

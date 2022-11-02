@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('login') }}">
+<form method="POST" action="{{ route('login') }}" id="form-login">
     @csrf
 
     <div class="row mb-3">
@@ -12,6 +12,8 @@
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
+
+            <!-- <span class="invalid-feedback" role="alert" id="invalid-credentials"></span> -->
         </div>
         <div class="col-md-4">
             <button type="submit" class="small-now-btn">
