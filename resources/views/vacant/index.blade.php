@@ -68,15 +68,19 @@
                                 <b>{{ $vacant->company }}</b> | {{ $vacant->position }} | {{ $vacant->city }}
                             </div>
                             <div class="float-right">
-                                @guest
+                                <!-- @guest
                                     <button class="small-now-btn m-2" data-toggle="modal" data-target="#myModal"> {{ __('ver datos para aplicar') }}</button>
-
-                                    
                                 @else
                                     <a href="{{ route('vacants.show',$vacant->id) }}" class="small-now-btn m-2">
                                         {{ __('ver datos para aplicar') }}
                                     </a>
-                                @endguest
+                                @endguest -->
+                                <a href="#" class="small-now-btn m-2" onclick="goViewVacant(`{{ route('vacants.show',$vacant->id) }}`)">
+                                    {{ __('ver datos para aplicar') }}
+                                </a>
+                                <button type="button" class="btn btn-primary btn-lg hidden" data-toggle="modal" data-target="#myModal" id="show-modal-login">
+                                    login
+                                </button>
                             </div>
                         </div>
                         

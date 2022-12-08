@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\UsersViewVacant;
 use App\Models\Vacant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 
 /**
@@ -38,42 +39,9 @@ class VacantController extends Controller
             'Presencial',
             'Hibrida'
         ];
-
-        $cities =[
-            'Amazonas',
-            'Antioquia',
-            'Arauca',
-            'Atlantico',
-            'Bogotá',
-            'Bolivar',
-            'Boyocá',
-            'Caldas',
-            'Caquetá',
-            'Casanare',
-            'Cauca',
-            'Cesar',
-            'Chocó',
-            'Córdoba',
-            'Cundinamarca',
-            'Guainía',
-            'Guaviare',
-            'Huila',
-            'La Guajira',
-            'Magdalena',
-            'Meta',
-            'Nariño',
-            'Norte de Santander',
-            'Putumayo',
-            'Quindío',
-            'Risaralda',
-            'San Andrés y Providencia',
-            'Santander',
-            'Sucre',
-            'Tolima',
-            'Valle del Cauca',
-            'Vaupés',
-            'Vichada'
-        ];
+        
+        $vacant = new Vacant();
+        $cities = $vacant->getCities();
 
         $vacants = Vacant::position($position_filter)->modality($modality_filter)->city($city_filter)->paginate();
 
@@ -104,41 +72,7 @@ class VacantController extends Controller
             'Presencial',
             'Hibrida'
         ];
-        $cities =[
-            'Amazonas',
-            'Antioquia',
-            'Arauca',
-            'Atlantico',
-            'Bogotá',
-            'Bolivar',
-            'Boyocá',
-            'Caldas',
-            'Caquetá',
-            'Casanare',
-            'Cauca',
-            'Cesar',
-            'Chocó',
-            'Córdoba',
-            'Cundinamarca',
-            'Guainía',
-            'Guaviare',
-            'Huila',
-            'La Guajira',
-            'Magdalena',
-            'Meta',
-            'Nariño',
-            'Norte de Santander',
-            'Putumayo',
-            'Quindío',
-            'Risaralda',
-            'San Andrés y Providencia',
-            'Santander',
-            'Sucre',
-            'Tolima',
-            'Valle del Cauca',
-            'Vaupés',
-            'Vichada'
-        ];
+        $cities = Arr::sort($vacant->getCities());
 
         return view('vacant.create', compact('vacant', 'position_availables', 'modalities', 'cities'));
     }
@@ -168,7 +102,10 @@ class VacantController extends Controller
     public function show($id)
     {
         $vacant = Vacant::find($id);
-        $saveView = UsersViewVacant::saveView(Auth::user()->id, $id);
+
+        if (Auth::check()) {
+            $saveView = UsersViewVacant::saveView(Auth::user()->id, $id);
+        }
 
         return view('vacant.show', compact('vacant'));
     }

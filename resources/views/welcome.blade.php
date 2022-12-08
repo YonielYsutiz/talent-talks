@@ -290,7 +290,7 @@
           <div class="speaker-details"> <span class="speaker-name">Liderazgo Digital</span> <span class="speaker-designation">Luis Martínez</span>
             <p class="speaker-meta">Evoluciona tu perfil profesional de manera práctica y flexible.</p>
             <div class="social-meta">
-                <a href="#exampleModalLong" onclick="sendViewVideo('liderazgo_digital', 'exampleModalLong')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                <a href="#exampleModalLong" class="exampleModalLong" onclick="sendViewVideo('liderazgo_digital', 'exampleModalLong')"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -1010,6 +1010,14 @@
 <script type="text/javascript" src="js/custom-menu.js"></script>
 <script type="text/javascript" src="js/eventpremium-script.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-
+  @guest
+    <script>
+      addLocalSession(false)
+    </script>
+  @else
+    <script>
+      addLocalSession(true, '{{ Auth::user()->id }}')
+    </script>
+  @endguest
 </body>
 </html>

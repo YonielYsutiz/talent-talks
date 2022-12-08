@@ -16,7 +16,7 @@
             <!-- <span class="invalid-feedback" role="alert" id="invalid-credentials"></span> -->
         </div>
         <div class="col-md-4">
-            <button type="submit" class="small-now-btn">
+            <button type="submit" class="small-now-btn" aria-pressed="false">
                 {{ __('Iniciar sesion') }}
             </button>
         </div>

@@ -24,7 +24,9 @@ $(function() {
                     var url = $(location).attr('href');
                     path_modal = url.split("#")
                     if(path_modal.length > 0) {
-                        $(`#${path_modal[1]}`).modal('show');
+                        // $(`#${path_modal[1]}`).modal('show');
+                        $(`a.${path_modal[1]}`).trigger("click");
+                        // 'a[href*="#seccion-45"]'
                     }
                     
                 }
@@ -32,3 +34,19 @@ $(function() {
         })
     })
 })
+
+function goViewVacant(url_vacant) {
+    if(window.localStorage.getItem('user_id') == undefined) {
+        return $("#show-modal-login").trigger("click");;
+    } else {
+        window.location.href = url_vacant;
+    }
+}
+
+function addLocalSession(bool, user_id) {
+    if (bool) {
+        window.localStorage.setItem('user_id', user_id);
+    } else {
+        localStorage.removeItem('user_id');
+    }
+}

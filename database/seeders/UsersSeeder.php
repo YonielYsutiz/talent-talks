@@ -19,7 +19,7 @@ class UsersSeeder extends Seeder
     {
         Model::unguard();
 
-        $file = fopen(public_path('csv/users_otro.csv'), 'r');
+        $file = fopen(public_path('csv/users_medellin.csv'), 'r');
 
         while (($data = fgetcsv($file)) !== false) {
             User::create([
